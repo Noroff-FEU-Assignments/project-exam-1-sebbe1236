@@ -1,0 +1,9 @@
+@media (max-width: 900px) {
+  .welcome-article {
+    display: flex;
+    flex-direction: column;
+  }
+  .welcome-article img {
+    width: 100%;
+  }
+}

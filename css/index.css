@@ -1,9 +1,60 @@
 @font-face {
   font-family: "Open Sans", sans-serif;
-  src: url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap");
+  src: url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+}
+body {
+  font-family: "Open Sans", sans-serif;
 }
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+html {
+  height: 100%;
+}
+ul {
+  list-style-type: none;
+}
+h1,
+h4 {
+  text-align: center;
+  padding: 15px;
+}
+header {
+  background-color: #ff9a55;
+  padding: 30px;
+  width: 100%;
+}
+.nav {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.nav a {
+  text-decoration: none;
+  font-size: 2em;
+  text-align: center;
+}
+footer {
+  background-color: #ffea6c;
+}
+
+.welcome-article {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 10px;
+  align-content: center;
+  text-align: center;
+}
+.welcome-article p {
+  padding: 5px;
+}
+.featured-section {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.featured-section img {
+  width: 100%;
+  padding: 10px;
 }
