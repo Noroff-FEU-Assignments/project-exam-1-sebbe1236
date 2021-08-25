@@ -17,10 +17,11 @@ async function frontpageApi() {
       <div>
       
       
-      <img src="${objects[i].featured_media.rendered}" alt= "test">
+      <img src="${objects[i]._embedded["wp:featuredmedia"]["0"].source_url}" alt= "test">
       <h4>
       ${objects[i].title.rendered}
       </h4>
+      
       </div>
       `;
     }
