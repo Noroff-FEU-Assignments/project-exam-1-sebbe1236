@@ -17,7 +17,8 @@ ul {
   list-style-type: none;
 }
 h1,
-h4 {
+h4,
+h2 {
   text-align: center;
   padding: 15px;
 }
@@ -28,7 +29,12 @@ header {
 }
 .nav {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.nav ul {
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .nav a {
@@ -36,8 +42,12 @@ header {
   font-size: 2em;
   text-align: center;
 }
+
 footer {
   background-color: #ffea6c;
+}
+#hamburger-menu {
+  display: none;
 }
 
 .welcome-article {
@@ -57,4 +67,29 @@ footer {
 .featured-section img {
   width: 100%;
   padding: 10px;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.nameError,
+.emailError,
+.subjectError,
+.explainError,
+.contact-grid label {
+  display: none;
+}
+
+#explainSubject {
+  padding: 10px;
+  height: 250px;
+  width: 200px;
+}
+
+.contact-grid div,
+.form-btn {
+  text-align: center;
+  padding: 20px;
 }

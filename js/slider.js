@@ -1,5 +1,5 @@
-//const url = "https://exam1api.sebbeprojects.com/wp-json/wp/v2/posts/";
-const url = "https://exam1api.sebbeprojects.com/wp-json/wp/v2/media";
+const url = "https://exam1api.sebbeprojects.com/wp-json/wp/v2/posts?_embed";
+//const url = "https://exam1api.sebbeprojects.com/wp-json/wp/v2/media";
 
 const slider = document.querySelector(".featured-section");
 
@@ -11,11 +11,17 @@ async function frontpageApi() {
     console.log(result);
     for (i = 0; i < objects.length; i++) {
       console.log(objects[i]);
+      console.log(objects[i].featured_media);
       slider.innerHTML += `
       
-      <div><img src="${objects[i].guid.rendered}
-      " alt= "test"></div>
+      <div>
       
+      
+      <img src="${objects[i].featured_media.rendered}" alt= "test">
+      <h4>
+      ${objects[i].title.rendered}
+      </h4>
+      </div>
       `;
     }
   } catch (error) {

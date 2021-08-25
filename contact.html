@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" rel="stylesheet" />
+
+    <link href="css/index.css" rel="stylesheet" />
+    <link href="css/media.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header>
+      <nav class="nav mobile-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="blogs.html">Blogs</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="contact-grid">
+      <h2>Fill in the form under to contact us</h2>
+      <section>
+        <form method="POST" class="contact-form">
+          <div>
+            <label for="Name">Your Name</label>
+            <input type="text" id="name" placeholder="Fill in your name" />
+            <div class="nameError">Please fill in a correct name</div>
+          </div>
+          <div>
+            <label for="E-mail">E-mail address</label>
+            <input type="text" id="email" placeholder="Fill in your e-mail" />
+            <div class="emailError">Please fill in a valid email address</div>
+          </div>
+          <div>
+            <label for="subject">Subject of your problem</label>
+            <input type="text" id="subject" placeholder="Subject" />
+            <div class="subjectError">Subject too short</div>
+          </div>
+          <div>
+            <label for="Explain-subject"></label>
+            <textarea id="explainSubject"></textarea>
+            <div class="explainError">Enter a minimum of 25 characters</div>
+          </div>
+          <div>
+            <button class="form-btn">Submit</button>
+          </div>
+          <div class="succesful-message"></div>
+        </form>
+      </section>
+    </main>
+    <footer></footer>
+    <script src="js/contact.js"></script>
+  </body>
+</html>
