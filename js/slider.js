@@ -7,27 +7,35 @@ async function frontpageApi() {
   try {
     const response = await fetch(url);
     const result = await response.json();
-    const objects = result;
+    return result.result;
     console.log(result);
-    for (i = 0; i < objects.length; i++) {
-      console.log(objects[i]);
-      console.log(objects[i].featured_media);
-      slider.innerHTML += `
-      
-      <div>
-      
-      
-      <img src="${objects[i]._embedded["wp:featuredmedia"]["0"].source_url}" alt= "test">
-      <h4>
-      ${objects[i].title.rendered}
-      </h4>
-      
-      </div>
-      `;
-    }
   } catch (error) {
     console.log("gikk skeis");
   }
 }
 
-frontpageApi();
+const result = frontpageApi();
+
+frontpageHtml(result);
+
+function frontpageHtml(objects) {
+  console.log("hey");
+  console.log(objects);
+  for (i = 0; i < result.length; i++) {
+    console.log(result[i]);
+    console.log(result[i].featured_media);
+    if (i === 4) {
+      break;
+    }
+    slider.innerHTML += `
+    <div>
+    <img src="${result[i]._embedded["wp:featuredmedia"]["0"].source_url}" alt= "test">
+    <h4>
+    ${result[i].title.rendered}
+    </h4>
+    </div>
+    `;
+  }
+}
+const CurrentIndex = 0;
+const currentShown = 4;

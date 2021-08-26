@@ -1,5 +1,8 @@
 @media (max-width: 900px) {
-  .welcome-article {
+  .welcome-article,
+  .about-grid,
+  .contact-grid,
+  .blogpost-content {
     display: flex;
     flex-direction: column;
   }
