@@ -4,8 +4,8 @@
 }
 body {
   font-family: "Open Sans", sans-serif;
-  height: 100%;
-  min-height: 100%;
+  display: grid;
+  min-height: 100vh;
 }
 * {
   box-sizing: border-box;
@@ -42,12 +42,21 @@ header {
 .nav ul {
   display: flex;
   justify-content: space-evenly;
+  font-size: 1.5em;
 }
 
+.onpage {
+  font-weight: bold;
+}
 .nav a {
   text-decoration: none;
-  font-size: 2em;
-  text-align: center;
+  font-size: 1.2em;
+  color: black;
+}
+
+.nav a:hover {
+  background-color: lightgreen;
+  border-radius: 10px 10px 10px 10px;
 }
 
 footer {
@@ -56,10 +65,13 @@ footer {
   width: 100%;
   margin: 0px;
 }
-#hamburger-menu {
+.hamburger-icon {
   display: none;
 }
 
+#hamburger-menu {
+  display: none;
+}
 .welcome-article {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -90,18 +102,32 @@ footer {
 .explainError,
 .contact-grid label {
   display: none;
+  background-color: red;
+  color: white;
+  border-radius: 15px;
 }
 
+.succesful-message p {
+  background-color: green;
+  color: white;
+  padding: 10px 10px;
+  border-radius: 15px;
+}
 #explainSubject {
   padding: 10px;
   height: 250px;
   width: 200px;
+  border-radius: 30px;
 }
 
 .contact-grid div,
 .form-btn {
   text-align: center;
   padding: 20px;
+}
+
+.about-grid img {
+  border-radius: 15px;
 }
 
 .blogpost-content {
@@ -124,4 +150,14 @@ footer {
 .about-grid {
   grid-template-columns: repeat(1, 1fr);
   text-align: center;
+  padding: 25px;
+}
+
+.arrow-div i {
+  padding: 10px;
+}
+
+.img-click,
+.welcome-article img {
+  border-radius: 25px;
 }

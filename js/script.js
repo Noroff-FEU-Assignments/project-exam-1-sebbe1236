@@ -5,8 +5,8 @@ const query = document.querySelector(".query-content");
 const queryString = document.location.search;
 const param = new URLSearchParams(queryString);
 const id = param.get("id");
-const urls = "https://exam1api.sebbeprojects.com/wp-json/wp/v2/posts?_embed" + id;
-
+//const urls = "https://exam1api.sebbeprojects.com/wp-json/wp/v2/posts?_embed" + id;
+const urls = "https://exam1api.sebbeprojects.com/wp-json/wp/v2/posts/" + id;
 console.log(id);
 
 async function idFetch() {
@@ -22,9 +22,9 @@ async function idFetch() {
 idFetch();
 
 function productFetch(details) {
-  console.log(details);
+  //console.log(details);
   query.innerHTML += `<div>
-    <img src="${details._embedded["wp:featuredmedia"]["0"].source_url}" alt= "test">
+    <img src= "${details.guid.rendered}">
     <h4>
     ${details.title.rendered}
     </h4>
@@ -34,3 +34,5 @@ function productFetch(details) {
 }
 
 productFetch();
+
+//<img src="${details._embedded["wp:featuredmedia"]["0"].source_url}" alt= "test"> dette er bildelenken som skal limes inn i product fetch div`n

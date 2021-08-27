@@ -9,7 +9,7 @@ async function blogsApi() {
     for (i = 0; i < objects.length; i++) {
       blogPost.innerHTML += `<a href="singleblog.html?id=${objects[i].id}">
      <div>
-     <img src="${objects[i]._embedded["wp:featuredmedia"]["0"].source_url}" alt= "test">
+     <img class="img-click" src="${objects[i]._embedded["wp:featuredmedia"]["0"].source_url}" alt= "test">
      <h4>${objects[i].title.rendered}</h4>
      </div>
      `;
@@ -20,3 +20,17 @@ async function blogsApi() {
 }
 
 blogsApi();
+
+const imageClick = document.querySelector(".img-click");
+
+function imgbiggerClick() {
+  imageClick.style.transform = "scale(1.5)";
+  imageClick.style.transform = "transform 0.25s ease";
+}
+
+function resetImg() {
+  imageClick.style.transform = "scale(1)";
+  imageClick.style.transition = "transform 0.25s ease";
+}
+
+imageClick.addEventListener("click", imgbiggerClick, resetImg);
