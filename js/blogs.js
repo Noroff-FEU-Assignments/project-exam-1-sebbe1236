@@ -1,4 +1,4 @@
-const Url = "https://exam1api.sebbeprojects.com/wp-json/wp/v2/posts?_embed";
+const Url = "https://exam1api.sebbeprojects.com/wp-json/wp/v2/posts?_embed&per_page=20";
 const blogPost = document.querySelector(".blogpost-content");
 async function blogsApi() {
   try {
