@@ -18,12 +18,15 @@ async function frontpageApi() {
 
 function frontpageHtml(objects) {
   let newContent = "";
-  for (i = currentIndex; i < currentShown; i++) {
+
+  for (let i = 0; i < numberOfImagesToShow; i++) {
+    const index = (currentIndex + i) % numberOfobjects;
+
     newContent += `
     <div>
-    <img src="${objects[i]._embedded["wp:featuredmedia"]["0"].source_url}" alt= "test">
+    <img src="${objects[index]._embedded["wp:featuredmedia"]["0"].source_url}" alt= "test">
     <h4>
-    ${objects[i].title.rendered}
+    ${objects[index].title.rendered}
     </h4>
     </div>
     `;
@@ -32,16 +35,14 @@ function frontpageHtml(objects) {
 }
 
 function previousSlide() {
-  currentIndex = (currentIndex - 4) % numberOfobjects;
-  currentShown = (currentShown - 4) % numberOfobjects;
+  currentIndex = (currentIndex - 1) % numberOfobjects;
   frontpageApi().then((res) => {
     frontpageHtml(res);
   });
 }
 
 function nextSlide() {
-  currentIndex = (currentIndex + 4) % numberOfobjects;
-  currentShown = (currentShown + 4) % numberOfobjects;
+  currentIndex = (currentIndex + 1) % numberOfobjects;
   frontpageApi().then((res) => {
     frontpageHtml(res);
   });
@@ -50,7 +51,7 @@ function nextSlide() {
 clickRight.addEventListener("click", nextSlide);
 clickLeft.addEventListener("click", previousSlide);
 let currentIndex = 0;
-let currentShown = 4;
+const numberOfImagesToShow = 4;
 let numberOfobjects = 10;
 
 frontpageApi().then((res) => frontpageHtml(res));
