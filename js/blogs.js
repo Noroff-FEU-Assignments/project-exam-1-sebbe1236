@@ -1,5 +1,6 @@
-const Url = "https://exam1api.sebbeprojects.com/wp-json/wp/v2/posts?_embed&per_page=20";
+const Url = "https://exam1api.sebbeprojects.com/wp-json/wp/v2/posts?_embed&per_page=12";
 const blogPost = document.querySelector(".blogpost-content");
+const moreContentbutton = document.querySelector(".more-contentbtn");
 async function blogsApi() {
   try {
     const response = await fetch(Url);
@@ -7,6 +8,9 @@ async function blogsApi() {
     const objects = result;
     console.log(result);
     for (i = 0; i < objects.length; i++) {
+      if (i === 6) {
+        break;
+      }
       blogPost.innerHTML += `<a href="singleblog.html?id=${objects[i].id}">
      <div>
      <img class="img-click" src="${objects[i]._embedded["wp:featuredmedia"]["0"].source_url}" alt= "test">
@@ -33,4 +37,4 @@ function resetImg() {
   imageClick.style.transition = "transform 0.25s ease";
 }
 
-imageClick.addEventListener("click", imgbiggerClick, resetImg);
+//imageClick.addEventListener("click", imgbiggerClick, resetImg);
