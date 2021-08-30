@@ -16,3 +16,8 @@
   font-size: 1em;
   text-align: center;
 }
+
+/*footer {
+  display: flex;
+  flex-direction: column;
+}

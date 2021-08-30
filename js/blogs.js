@@ -1,4 +1,4 @@
-const Url = "https://exam1api.sebbeprojects.com/wp-json/wp/v2/posts?_embed&per_page=12";
+const Url = "https://exam1api.sebbeprojects.com/wp-json/wp/v2/posts?_embed&per_page=18";
 const blogPost = document.querySelector(".blogpost-content");
 const moreContentbutton = document.querySelector(".more-contentbtn");
 async function blogsApi() {
@@ -8,7 +8,7 @@ async function blogsApi() {
     const objects = result;
     console.log(result);
     for (i = 0; i < objects.length; i++) {
-      if (i === 6) {
+      if (i === 10) {
         break;
       }
       blogPost.innerHTML += `<a href="singleblog.html?id=${objects[i].id}">
@@ -22,19 +22,20 @@ async function blogsApi() {
     console.log("da var vi her igjen");
   }
 }
-
 blogsApi();
 
-const imageClick = document.querySelector(".img-click");
+moreContentbutton.addEventListener("click");
 
-function imgbiggerClick() {
-  imageClick.style.transform = "scale(1.5)";
-  imageClick.style.transform = "transform 0.25s ease";
-}
+// const imageClick = document.querySelector(".img-click");
 
-function resetImg() {
-  imageClick.style.transform = "scale(1)";
-  imageClick.style.transition = "transform 0.25s ease";
-}
+// function imgbiggerClick() {
+//   imageClick.style.transform = "scale(1.5)";
+//   imageClick.style.transform = "transform 0.25s ease";
+// }
+
+// function resetImg() {
+//   imageClick.style.transform = "scale(1)";
+//   imageClick.style.transition = "transform 0.25s ease";
+// }
 
 //imageClick.addEventListener("click", imgbiggerClick, resetImg);
