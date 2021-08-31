@@ -183,3 +183,8 @@ footer {
 .onclick-content {
   text-align: center;
 }
+
+.modal,
+.Modal-content {
+  display: none;
+}

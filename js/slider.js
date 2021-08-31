@@ -44,7 +44,7 @@ function previousSlide() {
 
 function nextSlide() {
   currentIndex = (currentIndex + 1) % numberOfobjects;
-  clickRight.style.backgroundColor = "";
+
   frontpageApi().then((res) => {
     frontpageHtml(res);
   });

@@ -24,7 +24,7 @@ idFetch();
 function productFetch(details) {
   //console.log(details);
   query.innerHTML += `<div>
-    <img src= "${details.guid.rendered}">
+  <img src= "${details.guid.rendered}">
     <h4>
     ${details.title.rendered}
     </h4>
