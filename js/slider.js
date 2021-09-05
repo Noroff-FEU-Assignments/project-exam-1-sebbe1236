@@ -18,11 +18,13 @@ async function frontpageApi() {
 
 function frontpageHtml(objects) {
   let newContent = "";
-
+  slider.innerHTML = "";
   for (let i = 0; i < numberOfImagesToShow; i++) {
     const index = (currentIndex + i) % numberOfobjects;
 
-    newContent += `<a href="singleblog.html?id=${objects[index].id}">
+    newContent += `
+    
+    <a href="singleblog.html?id=${objects[index].id}">
     <div>
     <img src="${objects[index]._embedded["wp:featuredmedia"]["0"].source_url}" alt= "test">
     <h4>

@@ -67,6 +67,9 @@ footer {
   width: 100%;
   margin: 0px;
 }
+footer h5 {
+  text-decoration: underline;
+}
 .hamburger-icon {
   display: none;
 }
@@ -88,7 +91,8 @@ footer {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
 }
-.featured-section img {
+.featured-section img,
+.welcome-article img {
   width: 100%;
   padding: 10px;
 }
@@ -141,6 +145,8 @@ footer {
 
 .about-grid img {
   border-radius: 15px;
+  width: 100%;
+  padding: 10px;
 }
 
 .blogpost-content {
@@ -159,11 +165,23 @@ footer {
 }
 .about-grid h3 {
   text-align: center;
+  padding: 15px;
 }
 .about-grid {
   grid-template-columns: repeat(1, 1fr);
   text-align: center;
   padding: 25px;
+}
+
+.featured-section a,
+.blogpost-content a {
+  text-decoration: none;
+}
+
+form input {
+  padding: 10px 10px;
+  border-radius: 10px;
+  text-align: center;
 }
 
 .arrow-div i {
@@ -175,9 +193,10 @@ footer {
   border-radius: 25px;
 }
 
-.more-content-btn {
+#more-content-btn {
   padding: 15px;
   border-radius: 15px 15px;
+  margin-bottom: 10px;
 }
 
 .onclick-content {
@@ -187,4 +206,22 @@ footer {
 .modal,
 .Modal-content {
   display: none;
+}
+
+.loader {
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #ff0; /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

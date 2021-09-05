@@ -1,42 +1,65 @@
 const Url = "https://exam1api.sebbeprojects.com/wp-json/wp/v2/posts?_embed&per_page=18";
 const blogPost = document.querySelector(".blogpost-content");
-const moreContentbutton = document.querySelector(".more-contentbtn");
+let moreContentbutton = document.querySelector("#more-contentbtn");
 
-async function blogsApi() {
+moreContentbutton.onclick = loadMore;
+
+function loadMore() {
+  console.log("test");
+  const iterations = lastIndexLoaded + numberOfImagesToLoadNext + 1;
+  for (let i = lastIndexLoaded + 1; i < iterations; i++) {
+    console.log("i: ", i);
+    console.log("lastIndexLoaded: ", lastIndexLoaded);
+    console.log("numberofiagesnextt: ", numberOfImagesToLoadNext);
+
+    blogPost.innerHTML += `
+    <a href="singleblog.html?id=${result[i].id}">
+    <div> 
+          <img src="${result[i]._embedded["wp:featuredmedia"]["0"].source_url}" alt= "test">
+          <h4>${result[i].title.rendered}</h4>
+          </div>
+          `;
+
+    lastIndexLoaded++;
+  }
+  if (lastIndexLoaded >= numberOfImages - 1) {
+    moreContentbutton.style.display = "none";
+  }
+}
+
+async function blogsApifetch() {
   try {
     const response = await fetch(Url);
     const result = await response.json();
-    const objects = result;
+    return result;
     console.log(result);
-    for (i = 0; i < objects.length; i++) {
-      if (i === 10) {
-        break;
-      }
-      blogPost.innerHTML += `<a href="singleblog.html?id=${objects[i].id}">
-     <div>
-     <img = src="${objects[i]._embedded["wp:featuredmedia"]["0"].source_url}" alt= "test">
-     <h4>${objects[i].title.rendered}</h4>
-     </div>
-     `;
-    }
   } catch (error) {
-    console.log("da var vi her igjen");
+    console.log("Fail");
   }
 }
-blogsApi();
 
-//moreContentbutton.addEventListener("click");
+function blogContent(res) {
+  blogPost.innerHTML = "";
+  for (let i = 0; i < numberOfImagesToLoadInitially; i++) {
+    blogPost.innerHTML += `
+    <a href="singleblog.html?id=${res[i].id}">
+    <div> 
+          <img src="${res[i]._embedded["wp:featuredmedia"]["0"].source_url}" alt= "test">
+          <h4>${res[i].title.rendered}</h4>
+          </div>
+          `;
+  }
+}
 
-// const imageClick = document.querySelector(".img-click");
+const numberOfImagesToLoadInitially = 9;
+const numberOfImagesToLoadNext = 3;
+let result;
+let numberOfImages;
 
-// function imgbiggerClick() {
-//   imageClick.style.transform = "scale(1.5)";
-//   imageClick.style.transform = "transform 0.25s ease";
-// }
+blogsApifetch().then((res) => {
+  blogContent(res);
+  result = res;
+  numberOfImages = res.length;
+});
 
-// function resetImg() {
-//   imageClick.style.transform = "scale(1)";
-//   imageClick.style.transition = "transform 0.25s ease";
-// }
-
-//imageClick.addEventListener("click", imgbiggerClick, resetImg);
+let lastIndexLoaded = 8;
