@@ -2,11 +2,17 @@
   .welcome-article,
   .about-grid,
   .contact-grid,
-  .blogpost-content {
+  .blogpost-content,
+  .query-content {
     display: flex;
     flex-direction: column;
   }
-
+  .query-content img {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+  }
   .nav ul {
     text-decoration: none;
     font-size: 1em;

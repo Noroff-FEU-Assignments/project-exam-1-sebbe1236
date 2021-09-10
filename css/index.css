@@ -203,11 +203,20 @@ form input {
   text-align: center;
 }
 
-.modal,
-.Modal-content {
+.query-content p {
+  padding: 25px;
+}
+.modal-onclick {
+  border-radius: 20px;
+  text-align: center;
+  padding: 50px;
+}
+.modal-onclick img {
+  border-radius: 20px 20px;
+}
+.Modal {
   display: none;
 }
-
 .loader {
   border: 16px solid #f3f3f3; /* Light grey */
   border-top: 16px solid #ff0; /* Blue */
