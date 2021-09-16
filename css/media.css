@@ -1,4 +1,4 @@
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1125px) {
   .welcome-article,
   .about-grid,
   .contact-grid,
@@ -35,5 +35,23 @@
 
   .hamburger-icon {
     display: block;
+  }
+  .nav a {
+    font-size: 1em;
+  }
+  .featured-section img,
+  .welcome-article img {
+    width: 100%;
+    padding: 10px;
+  }
+  .modal-open img {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .about-grid img {
+    border-radius: 15px;
+    width: 100%;
+    padding: 10px;
   }
 }

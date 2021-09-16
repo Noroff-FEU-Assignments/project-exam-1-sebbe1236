@@ -25,12 +25,16 @@ function frontpageHtml(objects) {
     newContent += `
     
     <a href="singleblog.html?id=${objects[index].id}">
+    
+    
     <div>
     <img src="${objects[index]._embedded["wp:featuredmedia"]["0"].source_url}" alt= "test">
-    <h4>
+    <h5>
     ${objects[index].title.rendered}
-    </h4>
+    </h5>
+    
     </div>
+    
     
     `;
   }

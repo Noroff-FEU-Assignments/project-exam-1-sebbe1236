@@ -15,27 +15,29 @@ async function idFetch() {
   try {
     const response = await fetch(urls);
     const details = await response.json();
-
+    return details;
     console.log(details);
-    productFetch(details);
+    //productFetch(details);
   } catch (error) {
     console.log("jajajja");
   }
 }
-idFetch();
+//idFetch();
 
 function productFetch(details) {
   //console.log(details);
+  console.log(details);
   query.innerHTML += `<div>
   
-  
+    <div></diV>
     <p>${details.content.rendered}</p>  
     </div>
     `;
 }
 
-productFetch();
-
+idFetch().then((content) => {
+  productFetch(content);
+});
 //<img src="${details._embedded["wp:featuredmedia"]["0"].source_url}" alt= "test"> dette er bildelenken som skal limes inn i product fetch div`n
 //img src="${details.guid.rendered}" funker ikke men henter et img.
 //media_details.sizes.thumbnail.source_url

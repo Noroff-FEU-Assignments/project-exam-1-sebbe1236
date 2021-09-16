@@ -18,9 +18,15 @@ html {
 ul {
   list-style-type: none;
 }
+
+.frontpage-h1 {
+  box-shadow: 3px solid;
+  font-style: italic;
+}
 h1,
 h4,
-h2 {
+h2,
+h3 {
   text-align: center;
   padding: 15px;
 }
@@ -93,7 +99,7 @@ footer h5 {
 }
 .featured-section img,
 .welcome-article img {
-  width: 100%;
+  width: 70%;
   padding: 10px;
 }
 
@@ -145,30 +151,41 @@ footer h5 {
 
 .about-grid img {
   border-radius: 15px;
-  width: 100%;
+  width: 80%;
   padding: 10px;
+}
+
+.about-grid p {
+  padding: 15px;
 }
 
 .blogpost-content {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(1, 2fr);
   padding: 15px;
 }
 
 .blogpost-content img {
   width: 100%;
   padding: 10px;
+  border-radius: 30px;
 }
 
 .arrow-div {
   text-align: center;
+  padding: 10px;
 }
 .about-grid h3 {
   text-align: center;
   padding: 15px;
 }
+.grid-row {
+  grid-area: span 3 / 4;
+}
+
 .about-grid {
-  grid-template-columns: repeat(1, 1fr);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   text-align: center;
   padding: 25px;
 }
@@ -176,6 +193,13 @@ footer h5 {
 .featured-section a,
 .blogpost-content a {
   text-decoration: none;
+}
+
+.featured-section img {
+  width: 100%;
+}
+.featured-section h5 {
+  text-align: center;
 }
 
 form input {
@@ -193,14 +217,20 @@ form input {
   border-radius: 25px;
 }
 
-#more-content-btn {
-  padding: 15px;
-  border-radius: 15px 15px;
+#more-contentbtn {
+  padding: 20px;
+  border-radius: 20px 20px;
   margin-bottom: 10px;
+  transition: background-color 0.8s ease;
+}
+#more-contentbtn:hover {
+  background-color: green;
+  text-decoration-color: white;
 }
 
 .onclick-content {
   text-align: center;
+  padding: 10px;
 }
 
 .query-content p {
@@ -213,10 +243,12 @@ form input {
 }
 .modal-onclick img {
   border-radius: 20px 20px;
+  max-width: 100%;
 }
 .Modal {
   display: none;
 }
+
 .loader {
   border: 16px solid #f3f3f3; /* Light grey */
   border-top: 16px solid #ff0; /* Blue */
