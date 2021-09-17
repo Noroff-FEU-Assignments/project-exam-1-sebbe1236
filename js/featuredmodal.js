@@ -2,7 +2,6 @@
 //let onclickImage = document.querySelector("body > main > section > div > figure > img");
 //document.querySelector("body > main > section > div:nth-child(2) > figure > img")
 //const modalClose = document.querySelector("main");
-const closingModal = document.querySelector(".modal-open");
 
 let onclickImage;
 let toggleImage = true;

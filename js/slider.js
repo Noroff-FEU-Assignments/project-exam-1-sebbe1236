@@ -3,8 +3,8 @@ const url = "https://exam1api.sebbeprojects.com/wp-json/wp/v2/posts?_embed&per_p
 //const url = "https://exam1api.sebbeprojects.com/wp-json/wp/v2/media";
 
 const slider = document.querySelector(".featured-section");
-const clickRight = document.querySelector("#clickright");
-const clickLeft = document.querySelector("#clickleft");
+const clickRight = document.querySelector(".clickright");
+const clickLeft = document.querySelector(".clickleft");
 
 async function frontpageApi() {
   try {
