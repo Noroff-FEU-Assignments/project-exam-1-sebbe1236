@@ -161,14 +161,19 @@ footer h5 {
 
 .blogpost-content {
   display: grid;
-  grid-template-columns: repeat(1, 2fr);
+  grid-template-columns: repeat(2, 2fr);
   padding: 15px;
 }
 
+.blogpost-content div {
+  text-align: center;
+}
+
 .blogpost-content img {
-  width: 100%;
+  width: 70%;
   padding: 10px;
   border-radius: 30px;
+  text-align: center;
 }
 
 .arrow-div {
