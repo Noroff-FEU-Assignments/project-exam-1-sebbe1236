@@ -54,4 +54,9 @@
     width: 100%;
     padding: 10px;
   }
+  .blogpost-content img {
+    width: 100%;
+    padding: 10px;
+    border-radius: 30px;
+  }
 }
