@@ -185,9 +185,6 @@ footer h5 {
   text-align: center;
   padding: 15px;
 }
-.grid-row {
-  grid-area: span 3 / 4;
-}
 
 .about-grid {
   display: grid;
