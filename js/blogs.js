@@ -32,7 +32,6 @@ async function blogsApifetch() {
     const response = await fetch(Url);
     const result = await response.json();
     return result;
-    console.log(result);
   } catch (error) {
     console.log("Fail");
   }
