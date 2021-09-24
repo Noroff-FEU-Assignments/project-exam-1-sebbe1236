@@ -28,7 +28,7 @@ function frontpageHtml(objects) {
     
     
     <div>
-    <img src="${objects[index]._embedded["wp:featuredmedia"]["0"].source_url}" alt= "test">
+    <img src="${objects[index]._embedded["wp:featuredmedia"]["0"].source_url}" alt= "${objects[index].title.rendered}">
     <h5>
     ${objects[index].title.rendered}
     </h5>

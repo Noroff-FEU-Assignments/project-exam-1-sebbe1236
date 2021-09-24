@@ -43,7 +43,7 @@ function blogContent(res) {
     blogPost.innerHTML += `
     <a href="singleblog.html?id=${res[i].id}">
     <div> 
-          <img src="${res[i]._embedded["wp:featuredmedia"]["0"].source_url}" alt= "test">
+          <img src="${res[i]._embedded["wp:featuredmedia"]["0"].source_url}" alt= "${res[i].title.rendered}">
           <h4>${res[i].title.rendered}</h4>
           </div>
           `;
