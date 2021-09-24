@@ -15,7 +15,7 @@ function loadMore() {
     blogPost.innerHTML += `
     <a href="singleblog.html?id=${result[i].id}">
     <div> 
-          <img src="${result[i]._embedded["wp:featuredmedia"]["0"].source_url}" alt= "test">
+          <img src="${result[i]._embedded["wp:featuredmedia"]["0"].source_url}" alt= "${result[i].title.rendered}">
           <h4>${result[i].title.rendered}</h4>
           </div>
           `;
